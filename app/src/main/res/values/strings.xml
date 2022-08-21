@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BlackBricksTestQuest</string>
+
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="randomize">Randomize</string>
+</resources>
