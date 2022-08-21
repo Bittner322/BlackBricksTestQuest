@@ -2,9 +2,9 @@ package com.example.blackbrickstestquest
 
 import kotlin.random.Random
 
-
-private const val GAME_WIDTH = 5
-private const val GAME_HEIGHT = 5
+// Живая клетка - О, мертвая - Х
+private const val GAME_WIDTH = 10
+private const val GAME_HEIGHT = 10
 private const val ALIVE_CELL = "O   "
 private const val DEAD_CELL = "X   "
 private const val ROUND_DELAY: Long = 250
@@ -16,13 +16,13 @@ class Game {
     private val board = Board(width = GAME_WIDTH, height = GAME_HEIGHT, livingCellsCordsAtStart)
 
     private fun generateStartLivingCells(): Array<Pair<Int,Int>> {
-        val countOfLivingCells = Random.nextInt(25)
+        val countOfLivingCells = Random.nextInt(GAME_WIDTH * GAME_HEIGHT)
 
         var startLivingCells : Array<Pair<Int,Int>> = emptyArray()
 
         for(randomCord in 0..countOfLivingCells) {
-            val cordX = Random.nextInt(5)
-            val cordY = Random.nextInt(5)
+            val cordX = Random.nextInt(GAME_WIDTH)
+            val cordY = Random.nextInt(GAME_HEIGHT)
 
             val cord = cordX to cordY
 
